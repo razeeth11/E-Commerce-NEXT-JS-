@@ -6,10 +6,13 @@ import {
   Calculator,
   Calendar,
   CreditCard,
+  Heart,
   Search,
   Settings,
+  ShoppingBag,
   Smile,
   User,
+  UserRound,
 } from "lucide-react";
 
 import {
@@ -80,13 +83,27 @@ export default function NavBar() {
           </Link>
         ))}
       </div>
-      <div className="relative w-60 cursor-pointer" onClick={openCommand}>
-        <Search className="absolute right-3 top-1/4 h-4 w-4 text-gray-500" />
-        <Input
-          type="text"
-          placeholder="Search here..."
-          aria-label="Search through site content"
-        />
+      <div className="flex items-center gap-5">
+        <div className="relative w-60 cursor-pointer" onClick={openCommand}>
+          <Search className="absolute right-3 top-1/4 h-4 w-4 text-gray-500" />
+          <Input
+            type="text"
+            placeholder="What are you looking for ?"
+            aria-label="Search through site content"
+            className="pb-1.5"
+          />
+        </div>
+        <div className="flex items-center gap-4 cursor-pointer">
+          <Link href={"/shop/wishlist"}>
+            <Heart />
+          </Link>
+          <Link href={"/shop/cart"}>
+            <ShoppingBag />
+          </Link>
+          <Link href={"/user/account"}>
+            <UserRound />
+          </Link>
+        </div>
       </div>
       <CommandDemo open={open} setOpen={setOpen} />
     </div>
