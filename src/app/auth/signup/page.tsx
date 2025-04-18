@@ -53,19 +53,20 @@ export default function Signup() {
     setShow((prev) => !prev);
   };
   return (
-    <div className="flex items-center justify-center gap-20 h-screen mx-20">
-      <div className="border pointer-events-none hidden lg:block">
+    <div className="flex items-center justify-center gap-20 h-screen mx-5 lg:mx-15">
+      <div className="pointer-events-none hidden lg:block">
         <Image
           src="/auth.png"
           alt="Signup-page-illustration.png"
-          height={300}
+          height={450}
           width={600}
-          className="w-full h-[450px] object-cover"
+          className="w-[100%] h-[600px] object-cover"
+          priority={true}
         />
       </div>
-      <div className="flex flex-col gap-3 border lg:border-none p-5 rounded">
+      <div className="flex flex-col gap-3 border lg:border-none p-5 rounded w-[600px]">
         <h1 className="text-[36px] font-medium whitespace-nowrap select-none">
-          Signup to E-Commerce
+          Create an account
         </h1>
         <p className="text-[16px] font-regular select-none">
           Enter your details below
