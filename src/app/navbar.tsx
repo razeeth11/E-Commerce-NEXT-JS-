@@ -47,12 +47,12 @@ export default function NavBar() {
       url: "/",
     },
     {
-      name: "Contact",
-      url: "/marketing/contact",
-    },
-    {
       name: "About",
       url: "/marketing/about",
+    },
+    {
+      name: "Contact",
+      url: "/marketing/contact",
     },
     {
       name: "Login",
@@ -66,16 +66,18 @@ export default function NavBar() {
 
   return (
     <div className="flex items-center justify-between px-5 border-b p-1 bg-white">
-      <div className="flex items-center gap-2.5">
-        <Image
-          src={"/Logo.png"}
-          alt="CBR-Logo.png"
-          width={65}
-          height={65}
-          className="pointer-events-none"
-        />
-        <p className="text-xl font-medium">CBR E-Commerce</p>
-      </div>
+      <Link href="/">
+        <div className="flex items-center gap-2.5">
+          <Image
+            src={"/Logo.png"}
+            alt="CBR-Logo.png"
+            width={65}
+            height={65}
+            className="pointer-events-none"
+          />
+          <p className="text-xl font-medium">CBR E-Commerce</p>
+        </div>
+      </Link>
       <div className="flex items-center gap-10 font-medium hover:underline">
         {navLinks.map((link, index) => (
           <Link href={link.url} key={index}>
@@ -100,7 +102,7 @@ export default function NavBar() {
           <Link href={"/shop/cart"}>
             <ShoppingBag />
           </Link>
-          <Link href={"/user/account"}>
+          <Link href={"/user/abdul-razeeth"}>
             <UserRound />
           </Link>
         </div>

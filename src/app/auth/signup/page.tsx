@@ -53,7 +53,7 @@ export default function Signup() {
     setShow((prev) => !prev);
   };
   return (
-    <div className="flex items-center justify-center gap-20 h-screen mx-5 lg:mx-15">
+    <div className="flex items-center justify-center gap-20 h-[90vh] mx-5 lg:mx-15">
       <div className="pointer-events-none hidden lg:block">
         <Image
           src="/auth.png"
