@@ -133,7 +133,7 @@ export default function Login() {
                   Login
                 </Button>
                 <p className=" text-center select-none">
-                  Don't have an account?{" "}
+                  Dont have an account?{" "}
                   <Link href="/auth/signup" className="font-medium underline">
                     Signup
                   </Link>

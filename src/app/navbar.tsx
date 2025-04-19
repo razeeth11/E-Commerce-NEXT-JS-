@@ -8,7 +8,6 @@ import {
   Calendar,
   CreditCard,
   Heart,
-  MenuIcon,
   Search,
   Settings,
   ShoppingBag,
@@ -125,9 +124,7 @@ export default function NavBar() {
           <Link href={"/shop/cart"}>
             <ShoppingBag />
           </Link>
-          <Link href={"/user/abdul-razeeth"}>
-            <UserRound />
-          </Link>
+          <UserRound />
         </div>
         <div className="xl:hidden">
           <SideMenuBar />
@@ -193,7 +190,7 @@ export function SideMenuBar() {
         <SheetHeader className="border">
           <SheetTitle>Edit profile</SheetTitle>
           <SheetDescription>
-            Make changes to your profile here. Click save when you're done.
+            Make changes to your profile here. Click save when youre done.
           </SheetDescription>
         </SheetHeader>
         <div className="grid gap-4 py-4">

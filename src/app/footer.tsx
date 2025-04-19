@@ -15,7 +15,7 @@ type Url = {
 const footLinks: Url[] = [
   {
     name: "My Account",
-    url: "/user/abdul-razeeth",
+    url: "",
   },
   {
     name: "Login/Signup",
