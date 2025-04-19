@@ -11,7 +11,10 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -53,15 +56,15 @@ export default function Checkout() {
   });
 
   return (
-    <div className="h-screen flex items-center justify-center gap-15 mx-5 lg:mx-20">
+    <div className="flex items-center justify-center gap-15 mx-5 lg:mx-20 pt-20 pb-40 md:pb-[300px]">
       <div className="w-full">
-        <h1 className="text-2xl font-medium my-5">Billing Details</h1>
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit((data) => console.log(data))}
-            className="flex items-start border w-full"
+            className="flex flex-col md:flex-row items-start justify-center md:gap-20 w-full"
           >
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-7.5 w-full md:w-[40%]">
+              <h1 className="text-2xl font-medium my-5">Billing Details</h1>
               <FormField
                 control={form.control}
                 name="name"
@@ -74,7 +77,7 @@ export default function Checkout() {
                       <Input
                         type="text"
                         placeholder="Mr.Walter white"
-                        className="!text-[16px] border-0 outline-none focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 shadow-none focus:bg-none rounded-none py-5 bg-gray-100"
+                        className="!text-[16px] border-gray-200 outline-none focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 shadow-none focus:bg-none rounded-none py-5 bg-gray-50 placeholder:text-gray-300"
                         {...field}
                       />
                     </FormControl>
@@ -93,8 +96,8 @@ export default function Checkout() {
                     <FormControl>
                       <Input
                         type="text"
-                        placeholder="Street address"
-                        className="!text-[16px] border-0 outline-none focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 shadow-none focus:bg-none rounded-none py-5 bg-gray-100"
+                        placeholder="Tell me where you want to deliver"
+                        className="!text-[16px] border-gray-200 outline-none focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 shadow-none focus:bg-none rounded-none py-5 bg-gray-50 placeholder:text-gray-300"
                         {...field}
                       />
                     </FormControl>
@@ -113,8 +116,8 @@ export default function Checkout() {
                     <FormControl>
                       <Input
                         type="text"
-                        placeholder="Building or apartment name"
-                        className="!text-[16px] border-0 outline-none focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 shadow-none focus:bg-none rounded-none py-5 bg-gray-100"
+                        placeholder="Your building got some name right ?"
+                        className="!text-[16px] border-gray-200 outline-none focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 shadow-none focus:bg-none rounded-none py-5 bg-gray-50 placeholder:text-gray-300"
                         {...field}
                       />
                     </FormControl>
@@ -133,8 +136,8 @@ export default function Checkout() {
                     <FormControl>
                       <Input
                         type="text"
-                        placeholder="Town / City"
-                        className="!text-[16px] border-0 outline-none focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 shadow-none focus:bg-none rounded-none py-5 bg-gray-100"
+                        placeholder="Tell me the city"
+                        className="!text-[16px] border-gray-200 outline-none focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 shadow-none focus:bg-none rounded-none py-5 bg-gray-50 placeholder:text-gray-300"
                         {...field}
                       />
                     </FormControl>
@@ -154,7 +157,7 @@ export default function Checkout() {
                       <Input
                         type="text"
                         placeholder="+91 4375937495"
-                        className="!text-[16px] border-0 outline-none focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 shadow-none focus:bg-none rounded-none py-5 bg-gray-100"
+                        className="!text-[16px] border-gray-200 outline-none focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 shadow-none focus:bg-none rounded-none py-5 bg-gray-50 placeholder:text-gray-300"
                         {...field}
                       />
                     </FormControl>
@@ -174,7 +177,7 @@ export default function Checkout() {
                       <Input
                         type="text"
                         placeholder="heisenberg@meth.com"
-                        className="!text-[16px] border-0 outline-none focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 shadow-none focus:bg-none rounded-none py-5 bg-gray-100"
+                        className="!text-[16px] border-gray-200 outline-none focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 shadow-none focus:bg-none rounded-none py-5 bg-gray-50 placeholder:text-gray-300"
                         {...field}
                       />
                     </FormControl>
@@ -195,7 +198,91 @@ export default function Checkout() {
                 </label>
               </div>
             </div>
-            <div></div>
+            <div className="w-full md:w-[40%] mt-[120px]">
+              <div className="flex flex-col gap-3">
+                {[1, 2].map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center justify-between"
+                  >
+                    <div className="w-[70px] h-[40px] bg-gray-200 rounded"></div>
+                    <p className="font-medium text-[16px]">$650</p>
+                  </div>
+                ))}
+              </div>
+              <div className="flex flex-col gap-3 mt-10">
+                <div className="flex items-center justify-between border-b-2 pb-2.5">
+                  <p>Subtotal:</p>
+                  <p className="font-medium text-[16px]">$650</p>
+                </div>
+                <div className="flex items-center justify-between border-b-2 pb-2.5">
+                  <p>Shipping:</p>
+                  <p className="font-medium text-[16px]">Free</p>
+                </div>
+                <div className="flex items-center justify-between">
+                  <p>Total:</p>
+                  <p className="font-medium text-[16px]">$1750</p>
+                </div>
+              </div>
+              <div className="flex flex-col gap-5 mt-10">
+                <RadioGroup defaultValue="bank" className="flex flex-col gap-7">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-2 cursor-pointer">
+                      <RadioGroupItem
+                        value="bank"
+                        id="r1"
+                        className="w-[20px] h-[20px]"
+                      />
+                      <Label htmlFor="r1" className="cursor-pointer">
+                        Bank
+                      </Label>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      {[
+                        "/visa-svgrepo-com.svg",
+                        "/paypal-svgrepo-com.svg",
+                        "/mastercard-svgrepo-com (1).svg",
+                        "/amex-svgrepo-com.svg",
+                      ].map((bank, index) => (
+                        <Image
+                          src={bank}
+                          alt="bank-options"
+                          key={index}
+                          height={40}
+                          width={40}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-2 cursor-pointer">
+                    <RadioGroupItem
+                      value="cod"
+                      id="r2"
+                      className="w-[20px] h-[20px]"
+                    />
+                    <Label htmlFor="r2" className="cursor-pointer">
+                      Cash on delivery
+                    </Label>
+                  </div>
+                </RadioGroup>
+              </div>
+              <div className="flex items-center gap-5 mt-10">
+                <Input
+                  type="text"
+                  placeholder="Coupon Code"
+                  className="w-[65%] py-5 rounded"
+                />
+                <Button disabled className="w-[35%] py-5 bg-[#DB4444] rounded">
+                  Apply Coupon
+                </Button>
+              </div>
+              <Button
+                type="submit"
+                className="w-full py-6 bg-[#DB4444] rounded mt-18 text-[16px] cursor-pointer"
+              >
+                Checkout
+              </Button>
+            </div>
           </form>
         </Form>
       </div>
