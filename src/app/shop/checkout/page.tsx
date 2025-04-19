@@ -278,7 +278,7 @@ export default function Checkout() {
               </div>
               <Button
                 type="submit"
-                className="w-full py-6 bg-[#DB4444] rounded mt-18 text-[16px] cursor-pointer"
+                className="w-full py-6 bg-[#DB4444] hover:bg-[#c44949] rounded mt-18 text-[16px] cursor-pointer"
               >
                 Checkout
               </Button>

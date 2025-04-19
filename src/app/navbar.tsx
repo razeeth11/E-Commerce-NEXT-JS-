@@ -3,10 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
+  AlignLeft,
   Calculator,
   Calendar,
   CreditCard,
   Heart,
+  MenuIcon,
   Search,
   Settings,
   ShoppingBag,
@@ -26,8 +28,20 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from "@/components/ui/command";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
 
 type Url = {
   name: string;
@@ -67,7 +81,7 @@ export default function NavBar() {
   return (
     <div className="flex items-center justify-between px-5 border-b p-1 bg-white">
       <Link href="/">
-        <div className="flex items-center gap-2.5">
+        <div className="flex items-center gap-1">
           <Image
             src={"/Logo.png"}
             alt="CBR-Logo.png"
@@ -75,10 +89,10 @@ export default function NavBar() {
             height={65}
             className="pointer-events-none"
           />
-          <p className="text-xl font-medium">CBR E-Commerce</p>
+          <p className="text-2xl font-bold">CBR</p>
         </div>
       </Link>
-      <div className="flex items-center gap-10 font-medium hover:underline">
+      <div className="hidden xl:flex items-center gap-10 font-medium hover:underline">
         {navLinks.map((link, index) => (
           <Link href={link.url} key={index}>
             {link.name}
@@ -86,16 +100,25 @@ export default function NavBar() {
         ))}
       </div>
       <div className="flex items-center gap-5">
-        <div className="relative w-60 cursor-pointer" onClick={openCommand}>
+        <div
+          className="hidden md:block relative w-60 cursor-pointer"
+          onClick={openCommand}
+        >
           <Search className="absolute right-3 top-1/4 h-4 w-4 text-gray-500" />
           <Input
             type="text"
-            placeholder="What are you looking for ?"
+            placeholder="What are you looking for?"
             aria-label="Search through site content"
             className="pb-1.5"
           />
         </div>
-        <div className="flex items-center gap-4 cursor-pointer">
+        <Button
+          className="bg-white hover:bg-white border md:hidden"
+          onClick={openCommand}
+        >
+          <Search className="text-black" />
+        </Button>
+        <div className="hidden md:flex items-center gap-4 cursor-pointer">
           <Link href={"/shop/wishlist"}>
             <Heart />
           </Link>
@@ -105,6 +128,9 @@ export default function NavBar() {
           <Link href={"/user/abdul-razeeth"}>
             <UserRound />
           </Link>
+        </div>
+        <div className="xl:hidden">
+          <SideMenuBar />
         </div>
       </div>
       <CommandDemo open={open} setOpen={setOpen} />
@@ -156,3 +182,40 @@ const CommandDemo: React.FC<CommandStateType> = ({ open, setOpen }) => {
     </CommandDialog>
   );
 };
+
+export function SideMenuBar() {
+  return (
+    <Sheet>
+      <SheetTrigger asChild>
+        <AlignLeft />
+      </SheetTrigger>
+      <SheetContent>
+        <SheetHeader className="border">
+          <SheetTitle>Edit profile</SheetTitle>
+          <SheetDescription>
+            Make changes to your profile here. Click save when you're done.
+          </SheetDescription>
+        </SheetHeader>
+        <div className="grid gap-4 py-4">
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="name" className="text-right">
+              Name
+            </Label>
+            <Input id="name" value="Pedro Duarte" className="col-span-3" />
+          </div>
+          <div className="grid grid-cols-4 items-center gap-4">
+            <Label htmlFor="username" className="text-right">
+              Username
+            </Label>
+            <Input id="username" value="@peduarte" className="col-span-3" />
+          </div>
+        </div>
+        <SheetFooter>
+          <SheetClose asChild>
+            <Button type="submit">Save changes</Button>
+          </SheetClose>
+        </SheetFooter>
+      </SheetContent>
+    </Sheet>
+  );
+}
