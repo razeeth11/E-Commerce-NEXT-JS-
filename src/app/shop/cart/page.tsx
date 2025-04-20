@@ -82,15 +82,14 @@ export default function Cart() {
 }
 
 export function TableDemo() {
-  let totalValue: number = 0;
   const totalPrice = (): number => {
+    let totalValue: number = 0;
     for (var i = 0; i < cartItems.length; i++) {
       totalValue = totalValue + cartItems[i].price;
     }
 
     return totalValue;
   };
-  totalPrice();
 
   return (
     <Table className="border">
@@ -135,7 +134,11 @@ export function TableDemo() {
             </TableCell>
             <TableCell className="p-5 font-medium text-right">
               <p className="text-[16px]">
-                ${product.price - product.price * (product.discount / 100)}
+                $
+                {(
+                  (product.price - (product.price * product.discount) / 100) *
+                  product.quantity
+                ).toFixed(2)}
               </p>
             </TableCell>
           </TableRow>
@@ -144,7 +147,7 @@ export function TableDemo() {
       <TableFooter>
         <TableRow>
           <TableCell colSpan={5} className="text-right py-5 text-[18px]">
-            Total ${totalValue}
+            Total ${totalPrice().toFixed(2)}
           </TableCell>
         </TableRow>
       </TableFooter>
