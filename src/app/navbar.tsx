@@ -99,17 +99,11 @@ export default function NavBar() {
         ))}
       </div>
       <div className="flex items-center gap-5">
-        <div
-          className="hidden md:block relative w-60 cursor-pointer"
-          onClick={openCommand}
-        >
-          <Search className="absolute right-3 top-1/4 h-4 w-4 text-gray-500" />
-          <Input
-            type="text"
-            placeholder="What are you looking for?"
-            aria-label="Search through site content"
-            className="pb-1.5"
-          />
+        <div className="hidden md:block relative w-60" onClick={openCommand}>
+          <Button className="flex items-center gap-5 bg-white text-gray-500 border cursor-pointer">
+            What are you looking for?
+            <Search className="h-4 w-4 text-gray-500" />
+          </Button>
         </div>
         <Button
           className="bg-white hover:bg-white border md:hidden"

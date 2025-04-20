@@ -34,7 +34,7 @@ const footLinks: Url[] = [
 const Footer = () => {
   return (
     <div className="flex items-start justify-center md:justify-between gap-10 flex-wrap bg-black text-white p-5 lg:p-20">
-      <div className="flex flex-col gap-4 w-[150px] md:w-[230px] p-2.5">
+      <div className="flex flex-col gap-4 w-full md:w-[230px] p-2.5">
         <h1 className="text-[20px] md:text-[28px] font-medium underline">
           Exclusive
         </h1>
@@ -53,7 +53,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-4 w-[150px] md:w-[230px] p-2.5">
+      <div className="flex flex-col gap-4 w-full md:w-[230px] p-2.5">
         <h4 className="font-medium text-[18px] md:text-[20px] underline">
           Support
         </h4>
@@ -65,7 +65,7 @@ const Footer = () => {
         </p>
         <p className="text-[14px] md:text-[18px] font-normal">+98373456556</p>
       </div>
-      <div className="flex flex-col gap-4 w-[150px] md:w-[230px] p-2.5">
+      <div className="flex flex-col gap-4 w-full md:w-[230px] p-2.5">
         <h4 className="font-medium text-[18px] md:text-[20px] underline">
           Account
         </h4>
@@ -81,7 +81,7 @@ const Footer = () => {
           ))}
         </div>
       </div>
-      <div className="flex flex-col gap-4 w-[150px] md:w-[230px] p-2.5">
+      <div className="flex flex-col gap-4 w-full md:w-[230px] p-2.5">
         <h4 className="font-medium text-[18px] md:text-[20px] underline">
           Download App
         </h4>
@@ -99,7 +99,7 @@ const Footer = () => {
           )}
         </div>
       </div>
-      <div className="flex flex-col gap-4 w-[150px] md:w-[230px] p-2.5">
+      <div className="flex flex-col gap-4 w-full md:w-[230px] p-2.5">
         <h4 className="font-medium text-[18px] md:text-[20px] underline">
           Download App
         </h4>
