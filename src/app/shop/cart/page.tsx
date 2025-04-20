@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableFooter,
   TableHead,
@@ -81,10 +80,10 @@ export default function Cart() {
   );
 }
 
-export function TableDemo() {
+function TableDemo() {
   const totalPrice = (): number => {
     let totalValue: number = 0;
-    for (var i = 0; i < cartItems.length; i++) {
+    for (let i = 0; i < cartItems.length; i++) {
       totalValue = totalValue + cartItems[i].price;
     }
 
