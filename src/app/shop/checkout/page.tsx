@@ -56,7 +56,7 @@ export default function Checkout() {
   });
 
   return (
-    <div className="flex items-center justify-center gap-15 mx-5 lg:mx-20 pt-20 pb-40 md:pb-[300px]">
+    <div className="flex items-center justify-center gap-15 p-5 pb-[150px]">
       <div className="w-full">
         <Form {...form}>
           <form

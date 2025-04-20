@@ -56,8 +56,8 @@ export default function Contact() {
   });
 
   return (
-    <div className="min-h-[60vh] my-20">
-      <div className="flex flex-col lg:flex-row justify-between gap-10 m-5 lg:m-20 border border-amber-50">
+    <div className="min-h-[60vh] p-5 lg:p-25 pb-20">
+      <div className="flex flex-col lg:flex-row justify-between gap-10 border border-amber-50">
         <Card className="lg:w-[30%] px-5">
           <CardHeader>
             <CardTitle className="flex items-center gap-3">

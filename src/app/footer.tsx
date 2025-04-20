@@ -33,7 +33,7 @@ const footLinks: Url[] = [
 
 const Footer = () => {
   return (
-    <div className="flex items-start justify-center md:justify-between gap-10 flex-wrap bg-black text-white p-5 lg:p-20">
+    <div className="flex items-start justify-center md:justify-between gap-10 flex-wrap bg-black text-white p-5 lg:p-25">
       <div className="flex flex-col gap-4 w-full md:w-[230px] p-2.5">
         <h1 className="text-[20px] md:text-[28px] font-medium underline">
           Exclusive

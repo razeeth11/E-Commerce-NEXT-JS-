@@ -57,7 +57,7 @@ export default function Cart() {
   const router = useRouter();
 
   return (
-    <div className="flex flex-col justify-center h-[70vh] m-5 md:m-20">
+    <div className="flex flex-col justify-center h-[70vh] p-5 lg:p-25">
       <div>
         <TableDemo />
       </div>
